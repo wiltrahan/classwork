@@ -1,7 +1,10 @@
-// Java objects are in an area, which is called the heap. It is created when the program is run
-// its size may decrease or increase as your program runs.
-// It can easily become full, and when it does, garbage collection is initiated.
-// This is when objects that are no longer used are deleted to make way for new objects.
+/*
+Objects are located in the heap.
+The heap is created when the program is run and its size may increase or decrease as the program runs.
+When it becomes full garbage collection is initiated and objects that
+are no longer used are automatically deleted to make way for new objects.
+*/
+
 
 public class MinIntHeap {
     private int capacity = 10;
