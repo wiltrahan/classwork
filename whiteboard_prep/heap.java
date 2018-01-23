@@ -1,4 +1,5 @@
 /*
+HEAP
 Objects are located in the heap.
 The heap is created when the program is run and its size may increase or decrease as the program runs.
 When it becomes full garbage collection is initiated and objects that

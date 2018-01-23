@@ -1,8 +1,11 @@
-//stacks and queues are linear data structures in that you have on element, then another, then another
-//they are both flexible with sizes..can add or delete elements as you go
-//Stack memory allocation is done when your program is compiled.
-//Stacks are LIFO. Last In First Out
-//Queues are FIFO. First In First Out
+/*
+STACKS AND QUEUES
+Both Linear data structures in that you have one element, then another, then another.
+They are both flexible with sizes..can add or delete elements as you go.
+Stack memory allocation is done when your program is compiled.
+Stacks are LIFO. Last In First Out.
+Queues are FIFO. First In First Out.
+*/
 
 public static class Queue {
 
