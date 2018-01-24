@@ -2,7 +2,11 @@
 HASHMAP
 HashMap is a map based collection class that is used for storing key & value pairs.
 It is not an ordered collection so it doesn't return the keys and values in the same order in which they have been inserted into the HashMap.
-An advantage of using HashMap is that you can retrieve objects on constant time 0(1) IF you know the key.
+*/
+
+/*HASHMAP ARRANGES THE OBJECTS IN SUCH A WAY, THAT SEARCHING ANY OBJECT IN HASHMAP WILL BE DONE IN ALMOST O(1) CONSTANT TIME COMPLEXITY.
+Whenever any object is placed inside hashmap, It doesn't put into it blindly, instead it puts data in such a way that, searching for data can be done very easily.
+HASHMAP USES ARRAY AND LINKED LIST DATASTRUCTURE INTERNALLY FOR STORING KEY-VALUE PAIR.
 */
 
 //HashMap called nameAndAge declared
