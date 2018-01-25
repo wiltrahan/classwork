@@ -5,11 +5,12 @@ import java.util.Map;
 
 public class Main {
 
+    private static final String greenBold = "\033[1;32m";
+    private static final String reset = "\u001B[0m";
+
     public static void main(String[] args) {
 
-        Celtics coach = new Celtics("Brad Stevens", "Head Coach", "5 foot 11", "Baylor");
-
-        Map<Integer, Celtics> reserves = new HashMap<>();
+        Map<Integer, Celtics>reserves = new HashMap<>();
         Map<Integer, Celtics> starters = new HashMap<>();
 
         reserves.put(46, new Celtics("Aron Baynes", "Center", "6 foot 10", "Washington State"));
@@ -27,29 +28,39 @@ public class Main {
         starters.put(7, new Celtics("Jaylen Brown", "Guard", "6 foot 7", "California"));
         starters.put(13, new Celtics("Marcus Morris", "Forward", "6 foot 9", "Kansas"));
 
+        Celtics coach = new Celtics("Brad Stevens", "Head Coach", "5 foot 11", "Baylor");
 
-        for(Map.Entry<Integer, Celtics> player : reserves.entrySet()) {
-            int number = player.getKey();
-            Celtics value = player.getValue();
-            System.out.println("At " + value.getPosition() + "; " + value.getHeight() + " out of " +
-                                value.getSchool() + ", number " + number + "..." + value.getName());
-        }
-
-        System.out.println("\nAND NOW...YOUR STARTING LINEUP! (lights down....music up)" + "\n");
-
-        for(Map.Entry<Integer, Celtics> player : starters.entrySet()) {
-            int number = player.getKey();
-            Celtics value = player.getValue();
-            System.out.println("At " + value.getPosition() + "; " + value.getHeight() + " out of " +
-                    value.getSchool() + ", number " + number + "..." + value.getName().toUpperCase() + "!!");
-
-        }
-
-        System.out.println("\nAnd Head Coach " + coach.getName());
-        System.out.println("(music off, lights on)");
-
-
+        printReserves(reserves);
+        printStarters(starters);
+        printCoach(coach.getName());
     }
 
+    private static void printReserves(Map<Integer, Celtics>bench) {
+        //use entrySet() to get both the KEY & VALUE from the HashMap
+        System.out.println("\n");
+        for(Map.Entry<Integer, Celtics> player : bench.entrySet()) {
+            int number = player.getKey();
+            Celtics value = player.getValue();
+            System.out.println("At " + value.getPosition() + "; " + value.getHeight() + " out of " +
+                    value.getSchool() + ", number " + number + "; " + value.getName());
 
+        }
+    }
+
+    private static void printStarters(Map<Integer, Celtics>startingFive) {
+        System.out.println("\nAND NOW...YOUR STARTING LINEUP! (lights down....music up)");
+        for(Map.Entry<Integer, Celtics> player : startingFive.entrySet()) {
+            int number = player.getKey();
+            Celtics value = player.getValue();
+            System.out.println("\nAt " + value.getPosition() + "; " + value.getHeight() + " out of " +
+                    value.getSchool() + ", number " + number + "...\n\t\t\t" + greenBold +  value.getName().toUpperCase() + "!!" + reset);
+        }
+    }
+
+    private static void printCoach(String name) {
+        System.out.println("\n(music off, lights on)");
+        System.out.println("\nHead Coach " + name);
+
+    }
 }
+
